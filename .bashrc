@@ -115,3 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias netflix='google-chrome https://www.netflix.com'
+alias duelyst='google-chrome http://beta.duelyst.com'
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
