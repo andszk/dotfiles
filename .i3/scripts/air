@@ -5,8 +5,8 @@ DATA_COLLECTED=false
 DIFF=0;
 while [ $DATA_COLLECTED = false ]; do
   JDATA=$(curl -s 'http://powietrze.malopolska.pl/data/data.php?type=measurement&city=krakow&location=krasinskiego&date='$DATE'&time='$HOUR'&parameter=pm2.5,pm10&average=1h')
-  PM10=$(echo $JDATA | jq '.[0].value')
-  if [ -z $PM10 ]
+  DATA=$(echo $JDATA | jq '.[0]')
+  if [ "$DATA" == "null" ]
     then
     let DIFF=DIFF+1
     HOUR=$(date --date='-'$DIFF' hour' '+%H')
@@ -15,7 +15,7 @@ while [ $DATA_COLLECTED = false ]; do
     DATA_COLLECTED=true
   fi
 done
-
+PM10=$(echo $JDATA | jq '.[0].value')
 PM10="${PM10//\"}"
 CAQICOL=$(echo $JDATA | jq '.[0].caqicolor')
 CAQICOL="${CAQICOL//\"}"
