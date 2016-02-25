@@ -1,0 +1,3 @@
+[Added Associations]
+application/x-shellscript=sublime-text.desktop;
+application/x-deb=gdebi.desktop;
