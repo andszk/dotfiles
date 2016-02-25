@@ -58,13 +58,13 @@ bindsym $mod+a focus parent
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
 set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace10 "10 "
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -157,8 +157,8 @@ for_window [class="Skype"] floating enable
 # default workspaces
 assign [class="Spotify"] $workspace10
 assign [class="Skype"] $workspace9
-assign [class="qTox"] $workspace9
-
+assign [class="Gitkraken"] $workspace4
+assign [class="Sublime_text"] $workspace3
 
 
 # key-bindings
@@ -177,6 +177,9 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opaci
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+exec gitkraken
+exec firefox
+exec subl
 #exec --no-startup-id skype
 # Keys
 exec --no-startup-id compton -f
