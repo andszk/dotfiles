@@ -64,12 +64,12 @@ set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
-set $workspace5 "5 "
+set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
 set $workspace8 "8 "
 set $workspace9 "9 "
-set $workspace10 "10 [&#xf001;]"
+set $workspace10 "10 "
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -177,8 +177,8 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+n exec nautilus
 bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
-bindsym Print exec screenshot
-bindsym $mod+d exec rofi -show run -eh 2 -width 100 -lines 3 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym Print exec "scrot ~/Pobrane/Screenshot%Y-%m-%d%H:%M:%S.png"
+bindsym $mod+d exec rofi -show run -lines 5 -location 0 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
@@ -187,4 +187,4 @@ exec --no-startup-id i3-msg 'workspace $workspace4; exec gitkraken'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec subl'
 #exec --no-startup-id skype
 # Keys
-exec --no-startup-id compton -f
+exec --no-startup-id compton -cCGb --backend glx --vsync opengl
