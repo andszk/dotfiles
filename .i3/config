@@ -17,8 +17,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock
-#bindsym $mod+Shift+x exec i3lock --color 475263
-#bindsym $mod+Shift+x exec ~/.i3/scripts/lock.sh
 bindsym $mod+Shift+x exec ~/.i3/scripts/i3lock-fancy-master/lock
 
 # move focused window
@@ -58,7 +56,7 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
+bindsym $mod+Escape scratchpad show
 
 set $workspace1 "1 "
 set $workspace2 "2 "
@@ -206,6 +204,4 @@ exec --no-startup-id i3-msg 'workspace $workspace5; exec nautilus'
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 #exec --no-startup-id skype
-
-# Keys
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
