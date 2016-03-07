@@ -198,7 +198,7 @@ bindsym $mod+d exec rofi -show run -lines 5 -location 0 -eh 2 -width 100 -paddin
 # startup
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 exec --no-startup-id i3-msg 'workspace $workspace1; exec firefox'
-#exec --no-startup-id i3-msg 'workspace $workspace4; exec gitkraken'
+exec --no-startup-id i3-msg 'workspace $workspace6; exec gitkraken'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec subl'
 exec --no-startup-id i3-msg 'workspace $workspace5; exec nautilus'
 exec --no-startup-id nm-applet
