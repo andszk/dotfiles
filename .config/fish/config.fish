@@ -7,5 +7,4 @@ set -gx OMF_PATH "/home/leto/.local/share/omf"
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-Theme 'agnoster'
-Plugin 'theme'
+. /home/leto/torch/install/bin/torch-activate
