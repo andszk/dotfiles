@@ -1,0 +1,12 @@
+*
+!/.fonts/
+!/.i3/
+!/.config/
+/.config/
+!/.config/fish/**
+!/.config/gtk-3.0/**
+!/.config/terminator/**
+
+!.bashrc
+!.gtkrc-2.0
+!.wallpaper.jpg
