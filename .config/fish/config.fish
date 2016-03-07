@@ -1,3 +1,11 @@
-alias netflix='google-chrome https://www.netflix.com'
-alias duelyst='google-chrome http://beta.duelyst.com'
-alias ainstall='sudo apt-get install'
+# Path to Oh My Fish install.
+set -gx OMF_PATH "/home/leto/.local/share/omf"
+
+# Customize Oh My Fish configuration path.
+#set -gx OMF_CONFIG "/home/leto/.config/omf"
+
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
+
+Theme 'agnoster'
+Plugin 'theme'
