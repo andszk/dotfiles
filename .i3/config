@@ -63,10 +63,10 @@ set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
 set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
+set $workspace6 "6 "
+set $workspace7 "7 "
 set $workspace8 "8 "
-set $workspace9 "9 "
+set $workspace9 "9 "
 set $workspace10 "10 "
 
 # move focused container to workspace
@@ -207,6 +207,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 #exec --no-startup-id skype
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec redshift-gtk
+exec_always killall redshift; redshift-gtk
 exec setxkbmap -option '' -option kpdl:dot  pl
 exec xset -dpms s off s noblank s 0 0 s noexpose
