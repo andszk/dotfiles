@@ -1,5 +1,6 @@
 # mod
 set $mod Mod4
+#set $mod Mod1
 
 # font
 font pango: System San Francisco Display 10
@@ -26,10 +27,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+Mod1+Right workspace next
-bindsym $mod+Mod1+Left workspace prev
-bindsym $mod+Shift+Mod1+Right move workspace next
-bindsym $mod+Shift+Mod1+Left move workspace prev
+#bindsym $mod+Mod1+Right workspace next
+#bindsym $mod+Mod1+Left workspace prev
+#bindsym $mod+Shift+Mod1+Right move workspace next
+#bindsym $mod+Shift+Mod1+Left move workspace prev
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -56,7 +57,7 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 bindsym $mod+m move scratchpad
-bindsym $mod+Escape scratchpad show
+bindsym $mod+Escape scratchpad showhttps://trello.com/b/JmABU8Ie/rozrywka
 
 set $workspace1 "1 "
 set $workspace2 "2 "
@@ -189,6 +190,12 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+s exec i3exit suspend
+bindsym $mod+Shift+g exec google-chrome
+bindsym $mod+Shift+t exec google-chrome https://www.netflix.com/browse
+bindsym $mod+Shift+d exec google-chrome http://beta.duelyst.com/
+
+
 bindsym $mod+Shift+n exec nautilus
 bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
@@ -196,6 +203,7 @@ bindsym Print exec "scrot ~/Pobrane/Screenshot%Y-%m-%d%H:%M:%S.png"
 bindsym $mod+d exec rofi -show run  -lines 10 -location 0 -eh 2 -width 100 -padding 750 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+space exec rofi -show window -width 100 -location 0 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
+bindsym Mod1+Control+Delete exec gnome-system-monitor
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
@@ -203,6 +211,7 @@ exec --no-startup-id i3-msg 'workspace $workspace1; exec firefox'
 exec --no-startup-id i3-msg 'workspace $workspace6; exec gitkraken'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec subl'
 exec --no-startup-id i3-msg 'workspace $workspace5; exec nautilus'
+#exec --no-startup-id i3-msg 'workspace $workspace10; exec clementine'
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 #exec --no-startup-id skype
