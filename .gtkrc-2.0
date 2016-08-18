@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/leto/.gtkrc-2.0.mine"
-gtk-theme-name="Clearlooks"
-gtk-icon-theme-name="ubuntu-mono-dark"
+gtk-theme-name="Arc-Dark"
+gtk-icon-theme-name="breeze-dark"
 gtk-font-name="System San Francisco Display 10"
 gtk-cursor-theme-name="DMZ-White"
 gtk-cursor-theme-size=24
