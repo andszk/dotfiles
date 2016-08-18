@@ -27,10 +27,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+Tab workspace back_and_forth
-#bindsym $mod+Mod1+Right workspace next
-#bindsym $mod+Mod1+Left workspace prev
-#bindsym $mod+Shift+Mod1+Right move workspace next
-#bindsym $mod+Shift+Mod1+Left move workspace prev
+bindsym $mod+Mod1+Right workspace next
+bindsym $mod+Mod1+Left workspace prev
+bindsym $mod+Shift+Mod1+Right move workspace next
+bindsym $mod+Shift+Mod1+Left move workspace prev
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -50,14 +50,14 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+Control+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 bindsym $mod+m move scratchpad
-bindsym $mod+Escape scratchpad showhttps://trello.com/b/JmABU8Ie/rozrywka
+bindsym $mod+Escape scratchpad show
 
 set $workspace1 "1 "
 set $workspace2 "2 "
@@ -67,7 +67,7 @@ set $workspace5 "5 "
 set $workspace6 "6 "
 set $workspace7 "7 "
 set $workspace8 "8 "
-set $workspace9 "9 "
+set $workspace9 "9 "
 set $workspace10 "10 "
 
 # move focused container to workspace
@@ -140,8 +140,8 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+set $bg-color 	         #404552
+set $inactive-bg-color   #404552
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
@@ -156,9 +156,10 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # bar
 bar {
   	status_command i3blocks -c ~/.i3/i3blocks.conf
+  	font pango: System San Francisco Display 10, FontAwesome 10
 	colors {
 		background $bg-color
-	    	separator #757575
+	    	separator #404552
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -174,6 +175,8 @@ bar {
 for_window [class="qTox"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Skype"] floating enable
+for_window [class="google-chrome"] floating enable
+
 
 # default workspaces
 assign [class="Spotify"] $workspace10
@@ -200,15 +203,16 @@ bindsym $mod+Shift+n exec nautilus
 bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 bindsym Print exec "scrot ~/Pobrane/Screenshot%Y-%m-%d%H:%M:%S.png"
-bindsym $mod+d exec rofi -show run  -lines 10 -location 0 -eh 2 -width 100 -padding 750 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run  -lines 10 -location 0 -eh 2 -width 100 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+space exec rofi -show window -width 100 -location 0 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 bindsym Mod1+Control+Delete exec gnome-system-monitor
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+#exec --no-startup-id i3-msg 'workspace $workspace1; exec sudo update-manager'
 exec --no-startup-id i3-msg 'workspace $workspace1; exec firefox'
-exec --no-startup-id i3-msg 'workspace $workspace6; exec gitkraken'
+#exec --no-startup-id i3-msg 'workspace $workspace6; exec gitkraken'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec subl'
 exec --no-startup-id i3-msg 'workspace $workspace5; exec nautilus'
 #exec --no-startup-id i3-msg 'workspace $workspace10; exec clementine'
@@ -216,6 +220,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 #exec --no-startup-id skype
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec_always killall redshift; redshift-gtk
+exec_always killall redshift; redshift-gtk -t 6500:3500
 exec setxkbmap -option '' -option kpdl:dot  pl
 exec xset -dpms s off s noblank s 0 0 s noexpose
