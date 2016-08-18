@@ -68,11 +68,11 @@
  fa-text-height (&#xf034;)
  fa-text-width (&#xf035;)
  fa-align-left (&#xf036;)
- fa-align-center (&#xf037;)
+ fa-align-center (&#xf037;)
  fa-align-right (&#xf038;)
  fa-align-justify (&#xf039;)
  fa-list (&#xf03a;)
- fa-dedent (alias) (&#xf03b;)
+ fa-dedent (alias) (&#xf03b;)
  fa-outdent (&#xf03b;)
  fa-indent-left (&#xf03b;)
  fa-indent (&#xf03c;)
