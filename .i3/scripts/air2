@@ -1,0 +1,30 @@
+#!/bin/bash  
+DATE=$(date '+%Y-%m-%d')
+HOUR=$(date '+%H')
+DATA_COLLECTED=false
+DIFF=0;
+while [ $DATA_COLLECTED = false ]; do
+  JDATA=$(curl -s 'http://powietrze.malopolska.pl/data/data.php?type=measurement&city=krakow&location=krasinskiego&date='$DATE'&time='$HOUR'&parameter=pm2.5,pm10&average=1h')
+  PM10=$(echo $JDATA | jq '.[0].value')
+  if [ "$PM10" == "null" ]
+    then
+    let DIFF=DIFF+1
+    HOUR=$(date --date='-'$DIFF' hour' '+%H')
+    DATE=$(date --date='-'$DIFF' hour' '+%Y-%m-%d')
+  else
+    DATA_COLLECTED=true
+  fi
+done
+PM10=$(echo $JDATA | jq '.[0].value')
+PM10="${PM10//\"}"
+CAQICOL=$(echo $JDATA | jq '.[0].caqicolor')
+CAQICOL="${CAQICOL//\"}"
+HH=$(date '+%H')
+if [ "$HH" != "$HOUR" ]
+  then
+    echo $HOUR: pm10 = $PM10
+  else
+    echo pm10 = $PM10
+fi
+echo "tralalala"
+echo $CAQICOL
