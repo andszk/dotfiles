@@ -4,7 +4,7 @@ HOUR=$(date '+%H')
 DATA_COLLECTED=false
 DIFF=0;
 while [ $DATA_COLLECTED = false ]; do
-  JDATA=$(curl -s 'http://powietrze.malopolska.pl/data/data.php?type=measurement&city=krakow&location=krasinskiego&date='$DATE'&time='$HOUR'&parameter=pm2.5,pm10&average=1h')
+  JDATA=$(curl -s 'http://powietrze.malopolska.pl/data/data.php?type=measurement&city=krakow&location=krasinskiego&o_czas='$DATE'&time='$HOUR'&parameter=pm2.5,pm10&average=1h')
   PM10=$(echo $JDATA | jq '.[0].value')
   if [ "$PM10" == "null" ]
     then

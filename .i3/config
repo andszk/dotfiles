@@ -197,7 +197,8 @@ bindsym $mod+Shift+s exec i3exit suspend
 bindsym $mod+Shift+g exec google-chrome
 bindsym $mod+Shift+t exec google-chrome https://www.netflix.com/browse
 bindsym $mod+Shift+d exec google-chrome http://beta.duelyst.com/
-
+bindsys $mod+p exec xrandr --output HDMI1 --rotate right
+bindsys $mod+o exec xrandr --output HDMI1 --rotate normal
 
 bindsym $mod+Shift+n exec nautilus
 bindsym $mod+Return exec terminator
@@ -215,11 +216,11 @@ exec --no-startup-id i3-msg 'workspace $workspace1; exec firefox'
 #exec --no-startup-id i3-msg 'workspace $workspace6; exec gitkraken'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec subl'
 exec --no-startup-id i3-msg 'workspace $workspace5; exec nautilus'
-#exec --no-startup-id i3-msg 'workspace $workspace10; exec clementine'
+exec --no-startup-id i3-msg 'workspace $workspace10; exec clementine'
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 #exec --no-startup-id skype
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec_always killall redshift; redshift-gtk -t 6500:3500
+exec --no-startup-id redshift-gtk -l 50.08:19.92 -t 6500:3500
 exec setxkbmap -option '' -option kpdl:dot  pl
 exec xset -dpms s off s noblank s 0 0 s noexpose
